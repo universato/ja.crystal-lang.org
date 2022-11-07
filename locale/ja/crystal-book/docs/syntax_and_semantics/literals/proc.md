@@ -1,6 +1,6 @@
 # Proc
 
-[Proc](https://crystal-lang.org/api/Proc.html)は追加のコンテキスト (クロージャ) を持つ関数ポインタです。通常、Proc リテラルを使って生成します。
+A [Proc](https://crystal-lang.org/api/Proc.html) represents a function pointer with an optional context (the closure data). 通常、Proc リテラルを使って生成します。
 
 ```crystal
 # A proc without parameters

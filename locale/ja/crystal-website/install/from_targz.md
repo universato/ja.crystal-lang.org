@@ -1,10 +1,10 @@
 ---
-subtitle: From tar.gz
+subtitle: tar.gz からの
 ---
 
 Crystal をスタンドアローンの `.tar.gz` ファイルからインストールすることができます。
 
-最新のファイルは [GitHub のリリースページ](https://github.com/crystal-lang/crystal/releases)から入手できます。
+最新のファイルは[GitHub のリリースページ](https://github.com/crystal-lang/crystal/releases)から入手できます。
 
 それぞれのプラットフォームに合わせて適切なファイルをダウンロードして展開してください。その中に、`bin/crystal` という実行可能ファイルが含まれています。
 

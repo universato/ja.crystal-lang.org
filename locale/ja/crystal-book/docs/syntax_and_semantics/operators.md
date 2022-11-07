@@ -286,7 +286,8 @@ Operators with different precedences can be chained too, however, it is advised 
 ### インデックスアクセサ
 
 インデックスアクセサは配列の要素やハッシュのエントリなど、インデックスもしくはキーに対応する値を取得するために使います。nil を受け入れるもの `[]?` はもしインデックスに対応する値が存在しなかった場合に `nil` を返すものです。nil を受け入れない場合はその場合にはエラーを起こします。
-標準ライブラリではそのような場合通常、[`KeyError`](https://crystal-lang.org/api/KeyError.html) か [`IndexError`](https://crystal-lang.org/api/IndexError.html) がエラーとして投げなられます。
+Implementations in the standard-library usually raise [`KeyError`](https://crystal-lang.org/api/KeyError.html)
+or [`IndexError`](https://crystal-lang.org/api/IndexError.html).
 
 | 演算子名 | 説明 | 例 | オーバーロード可能か |
 |---|---|---|---|

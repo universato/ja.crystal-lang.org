@@ -1,6 +1,6 @@
 # 名前付きタプル (NamedTuple)
 
-[NamedTuple](https://crystal-lang.org/api/NamedTuple.html)は通常名前付きタプルリテラルによって生成します。
+A [NamedTuple](https://crystal-lang.org/api/NamedTuple.html) is typically created with a named tuple literal:
 
 ```crystal
 tuple = {name: "Crystal", year: 2011} # NamedTuple(name: String, year: Int32)

@@ -1,8 +1,8 @@
 # 正規表現
 
-正規表現は[Regex](https://crystal-lang.org/api/Regex.html)クラスによって表現されます。
+Regular expressions are represented by the [Regex](https://crystal-lang.org/api/Regex.html) class.
 
-正規表現には[PCRE](http://pcre.org/pcre.txt)の構文を使います。リテラルとしては、UTF-8の文字列をスラッシュ (`/`) で囲んで記述します。
+正規表現には [PCRE](http://pcre.org/pcre.txt) の構文を使います。リテラルとしては、UTF-8の文字列をスラッシュ (`/`) で囲んで記述します。
 
 ```crystal
 /foo|bar/

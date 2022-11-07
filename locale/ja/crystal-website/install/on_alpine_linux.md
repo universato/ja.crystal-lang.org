@@ -1,5 +1,5 @@
 ---
-subtitle: On Alpine Linux
+subtitle: Alpine Linux への
 ---
 
 Alpine Linux では、バージョン 3.7 から Crystal のコンパイラがコミュニティリポジトリに含まれています。

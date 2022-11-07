@@ -7,14 +7,14 @@
 
 パーセントリテラルの形式の場合、他のパーセントリテラルと同様に`%x`では、括弧`()`、角括弧`[]`、ひげ括弧`{}`、三角括弧`<>`そしてパイプ`||`といった区切り文字が有効です。パイプ文字を除いて、すべての区切り文字はネストに応じて適切に処理されます。
 
-特殊変数 `$?` はコマンドの実行結果の [`Process::Status`](https://crystal-lang.org/api/Process/Status.html) オブジェクトになります。この特殊変数はコマンドリテラルと同じスコープに限り有効です。
+The special variable `$?` holds the exit status of the command as a [`Process::Status`](https://crystal-lang.org/api/Process/Status.html). この特殊変数はコマンドリテラルと同じスコープに限り有効です。
 
 ```crystal
 `echo foo`  # => "foo"
 $?.success? # => true
 ```
 
-内部的にはコンパイラはコマンドリテラルを [`` `()``](https://crystal-lang.org/api/toplevel.html#%60(command):String-class-method) メソッドに文字列リテラルを渡すように書き換えています。つまり `` `echo #{argument}` `` と `%x(echo #{argument})` は `` `("echo #{argument}")`` のように書き換えられています。
+Internally, the compiler rewrites command literals to calls to the top-level method [`` `()``](https://crystal-lang.org/api/toplevel.html#%60(command):String-class-method) with a string literal containing the command as argument: `` `echo #{argument}` `` and `%x(echo #{argument})` are rewritten to `` `("echo #{argument}")``.
 
 ## セキュリティ上の懸念
 
@@ -27,7 +27,7 @@ user_input = "hello; rm -rf *"
 
 このコマンドは `hello` と出力したあとに現在のディレクトリのファイルとフォルダを全て削除します。
 
-これを避けるには、コマンドリテラルの補間にユーザーの入力した値を用いないようにする必要があります。また標準ライブラリにある [`Process`](https://crystal-lang.org/api/Process.html) を使うとユーザーの入力を安全にコマンドの引数として渡すことができます
+これを避けるには、コマンドリテラルの補間にユーザーの入力した値を用いないようにする必要があります。[`Process`](https://crystal-lang.org/api/Process.html) from the standard library offers a safe way to provide user input as command arguments:
 
 ```crystal
 user_input = "hello; rm -rf *"

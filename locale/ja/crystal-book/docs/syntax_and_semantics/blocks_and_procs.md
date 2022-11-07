@@ -337,7 +337,7 @@ end
 value # :: Int32 | String
 ```
 
-`break` が複数の引数を受け取るとき、それらは自動的に [Tuple](https://crystal-lang.org/api/Tuple.html) に変換されます。
+If a `break` receives many arguments, they are automatically transformed to a [Tuple](https://crystal-lang.org/api/Tuple.html):
 
 ```crystal
 values = twice { break 1, 2 }
@@ -399,7 +399,7 @@ end
 # 3
 ```
 
-`next` が複数の引数を受け取るとき、それらは自動的に [Tuple](https://crystal-lang.org/api/Tuple.html) に変換されます。引数を取らない場合には、 `nil` を1つ受け取ったのと同じことになります。
+If a `next` receives many arguments, they are automatically transformed to a [Tuple](https://crystal-lang.org/api/Tuple.html). 引数を取らない場合には、 `nil` を1つ受け取ったのと同じことになります。
 
 ## with ... yield
 
@@ -461,7 +461,7 @@ array.each do |number, word, bool|
 end
 ```
 
-例えば [Hash(K, V)#each](https://crystal-lang.org/api/Hash.html#each(&):Nil-instance-method) はブロックに `Tuple(K, V)` を渡すので、自動展開が上手く機能します。
+[Hash(K, V)#each](https://crystal-lang.org/api/Hash.html#each(&):Nil-instance-method) passes `Tuple(K, V)` to the block so iterating key-value pairs works with auto-splatting:
 
 ```crystal
 h = {"foo" => "bar"}

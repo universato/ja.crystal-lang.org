@@ -52,7 +52,7 @@ end
 さて、これがどうやって動作するというのでしょうか？　それは……魔法のように！　いえいえ、実のところ魔法ではないのです。実装が簡単になったのは Crystal のおかげです。
 プログラムが開始すると、まず`OptionParser#parse`に渡されたブロックが実行されます。このブロックですべてのオプションを定義しています。ブロックが実行されたのち、オプションパーサーがアプリケーションに渡された引数を処理して、定義したオプションにマッチするかを確認します。ここで、オプションがマッチしたときに、`parser#on`に渡されたブロックが実行される、というわけです。
 
-`OptionParser`のすべてを[公式の API ドキュメント](https://crystal-lang.org/api/OptionParser.html)によって確認できます。そして、そこから1クリックでソースコードを見ることができます。……これが魔法ではないということの証明です。
+We can read all about `OptionParser` in [the official API documentation](https://crystal-lang.org/api/OptionParser.html). そして、そこから1クリックでソースコードを見ることができます。……これが魔法ではないということの証明です。
 
 さて、それではアプリケーションを実際に実行してみましょう。[コンパイラの実行方法](../using_the_compiler/README.md)は2種類あります。
 
@@ -319,7 +319,7 @@ puts "The Beatles are singing: 🎵#{lyrics.upcase}🎶🎸🥁"
 ここからは、アプリケーションの出力という、2つ目のトピックに取りかかっていきます。
 はじめに、アプリケーションは現時点でも情報を表示してはいるけど、そこまで良い表示だとは言えません。せっかくなので出力を _色付け_ してみましょう。
 
-これを達成するために[`Colorize`](https://crystal-lang.org/api/Colorize.html)モジュールを使いたいと思います。
+And to accomplish this, we will be using the [`Colorize`](https://crystal-lang.org/api/Colorize.html) module.
 
 色付いた文字列を表示する、単純なアプリケーションを作ってみましょう。黒の背景に黄色のフォントを使用します:
 
@@ -359,7 +359,7 @@ puts "The Beatles are singing: #{"🎵#{lyrics}🎶🎸🥁".colorize.mode(:blin
 生まれ変わったアプリケーションを試してみてください……そして、違いを_聴き取って_ください。
 **今**、私たちは2つのファビュラスなアプリケーションを実装したのです。
 
-**利用できる色**や**テキストの装飾**の一覧は[API ドキュメント](https://crystal-lang.org/api/Colorize.html)で確認できます。
+You may find a list of **available colors** and **text decorations** in the [API documentation](https://crystal-lang.org/api/Colorize.html).
 
 ## テスト
 
@@ -371,10 +371,10 @@ puts "The Beatles are singing: #{"🎵#{lyrics}🎶🎸🥁".colorize.mode(:blin
 
 よりリッチなCLI アプリケーションを構築しようと思ったとき、これらのライブラリが助けになります。`Readline`と`NCurses`という、2つのよく知られたライブラリです。
 
-[GNU Readline Library](http://www.gnu.org/software/readline/)というドキュメントで述べられているように、`Readline`はユーザーに対してコマンドライン編集機能を提供します。
-`Readline` は素晴らしく強力な機能があります。ボックス外でのファイル名の自動補完、自動補完方法のカスタマイズ、キーバインド変更というのはほんの一例です。それらの機能を使いたいのであれば[crystal-lang/crystal-readline](https://github.com/crystal-lang/crystal-readline) shardが`Readline`を簡単に扱える API を提供しています。
+[GNU Readline Library](http://www.gnu.org/software/readline/) で述べられているように、`Readline` はユーザーに対してコマンドライン編集機能を提供します。
+`Readline` は素晴らしく強力な機能があります。ボックス外でのファイル名の自動補完、自動補完方法のカスタマイズ、キーバインド変更というのはほんの一例です。それらの機能を使いたいのであれば [crystal-lang/crystal-readline](https://github.com/crystal-lang/crystal-readline) shard が `Readline` を簡単に扱うための API を提供しています。
 
 続いて、`NCurses`(New Curses) の紹介です。このライブラリは端末で_グラフィカルな_ユーザーインターフェースを開発することを可能にします。その名前が暗に示すように、これは`Curses`というライブラリの改良版です。`Curses` は Rouge というテキストベースのダンジョン探索アドベンチャーゲームのために開発されました。
-`NCurses` を Crystal から扱える [shardは2つ](https://crystalshards.org/shards/search?q=ncurses)ほど存在しています。
+想像してみてください。`NCurses` Crystal で使うには[いくつもの shardls](https://crystalshards.org/shards/search?q=ncurses)がエコシステムには存在しています。
 
 これでこの文章はおしまいです 😎🎶

@@ -10,13 +10,13 @@
 
 とはいえ、もしプログラムを書いている際に「意味的に同じ内容をより早く実行できるバージョン」がちょっとした変更で実現できるのであれば、その機会を見逃す手はありません。
 
-そして、常に自分のプログラムをプロファイリングして、ボトルネックがどこにあるのかを確認するようにしましょう。For profiling, on macOS you can use [Instruments Time Profiler](https://developer.apple.com/library/prerelease/content/documentation/DeveloperTools/Conceptual/InstrumentsUserGuide/Instrument-TimeProfiler.html), which comes with XCode, or one of the [sampling profilers](https://stackoverflow.com/questions/11445619/profiling-c-on-mac-os-x). On Linux, any program that can profile C/C++ programs, like [perf](https://perf.wiki.kernel.org/index.php/Main_Page) or [Callgrind](http://valgrind.org/docs/manual/cl-manual.html), should work.  For both Linux and OS X, you can detect most hotspots by running your program within a debugger then hitting "ctrl+c" to interrupt it occasionally and issuing a gdb `backtrace` command to look for patterns in backtraces (or use the [gdb poor man's profiler](https://poormansprofiler.org/) which does the same thing for you, or OS X `sample` command.
+そして、常に自分のプログラムをプロファイリングして、ボトルネックがどこにあるのかを確認するようにしましょう。プロファイリングには、macOS上であればXCodeに含まれている [Instruments Time Profiler](https://developer.apple.com/library/prerelease/content/documentation/DeveloperTools/Conceptual/InstrumentsUserGuide/Instrument-TimeProfiler.html) もしくは [サンプリングプロファイラ](https://stackoverflow.com/questions/11445619/profiling-c-on-mac-os-x)の1つが利用できます。Linux であれば、[perf](https://perf.wiki.kernel.org/index.php/Main_Page) や [Callgrind](http://valgrind.org/docs/manual/cl-manual.html) のようなC/C++ プログラムをプロファイリング可能な仕組みが大抵は動作するでしょう。Linux と macOS のどちらにしても、デバッガーでプログラムを実行している最中に "ctrl+c" で割り込んで、 gdb の  `backtrace` コマンドを使ってもっともよく出現するところがホットスポットだと考えられます。(もしくは、 [gdb poor man's profiler](https://poormansprofiler.org/) を使って同様のことをしたり、macOS では `sample` コマンドが使えます)
 
 なお、プログラムのプロファイリングを行う際は、必ずコンパイルする際や実行時に `--release` フラグをつけて最適化を有効にするようにしてください。
 
 ## メモリの割り当てを避ける
 
-プログラムの中で実施可能な一番良い最適化は、余分な/無用なメモリの割り当てを避けることです。メモリの割り当ては**クラス**のインスタンスを生成することで起き、結果としてヒープメモリが割り当てられます。**構造体**のインスタンスを使用する場合はスタックメモリ が使用されるので、パフォーマンス上のペナルティ発生しません。スタックメモリとヒープメモリの違いがわからない場合は、 [ここを読んでみてください](https://stackoverflow.com/questions/79923/what-and-where-are-the-stack-and-heap)。
+プログラムの中で実施可能な一番良い最適化は、余分な/無用なメモリの割り当てを避けることです。メモリの割り当ては**クラス**のインスタンスを生成することで起き、結果としてヒープメモリが割り当てられます。**構造体**のインスタンスを使用する場合はスタックメモリ が使用されるので、パフォーマンス上のペナルティ発生しません。スタックメモリとヒープメモリの違いがわからない場合は、[ここを読んでみてください](https://stackoverflow.com/questions/79923/what-and-where-are-the-stack-and-heap)。
 
 ヒープメモリの割り当ては低速で、後々そのメモリを解放するガーベジコレクタ（GC）に負荷をかけます。
 

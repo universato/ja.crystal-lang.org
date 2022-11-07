@@ -1,6 +1,6 @@
 # 文字 (Char)
 
-[Char](https://crystal-lang.org/api/Char.html)は32 bitの[Unicode](http://en.wikipedia.org/wiki/Unicode)[コードポイント](http://en.wikipedia.org/wiki/Code_point)を表現します。
+A [Char](https://crystal-lang.org/api/Char.html) represents a 32-bit [Unicode](http://en.wikipedia.org/wiki/Unicode) [code point](http://en.wikipedia.org/wiki/Code_point).
 
 通常、シングルクォートでUTF-8でエンコードされた文字を囲って文字リテラルを記述します。
 

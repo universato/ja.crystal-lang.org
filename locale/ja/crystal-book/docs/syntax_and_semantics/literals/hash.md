@@ -1,6 +1,6 @@
 # ハッシュ (Hash)
 
-[Hash](https://crystal-lang.org/api/Hash.html)は`K`型のキーと`V`型の値のペアの対応付けからなるジェネリックなコレクションです。
+A [Hash](https://crystal-lang.org/api/Hash.html) is a generic collection of key-value pairs mapping keys of type `K` to values of type `V`.
 
 ハッシュは通常、ひげ括弧 (`{ }`) に囲われた中に、キーと値を `=>` で組にしてコンマ `,` で区切って並べたものである、ハッシュリテラルによって生成されます。
 
