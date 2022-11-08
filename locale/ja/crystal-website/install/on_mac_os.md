@@ -1,8 +1,8 @@
 ---
-subtitle: On macOS
+subtitle: macOS への
 ---
 
-To easily install Crystal on macOS you can use [Homebrew](http://brew.sh/).
+[Homebrew](http://brew.sh/) を利用すると、簡単に macOS に Crystal をインストールできます。
 
 ```bash
 brew update
@@ -11,7 +11,7 @@ brew install crystal
 
 Homebrew で最新のバージョンの Crystal をインストールすることもできます。Crystal のコアチームが formula をメンテナンスしています。
 
-Alternative there are `.tar.gz` and `.pkg` files in each [release](https://github.com/crystal-lang/crystal/releases) targeted for darwin. これは[tar.gz からのインストール](/install/from_targz)を参照してください。
+あるいは darwin 向けの `.tar.gz` や `.pkg` ファイルが各[リリース](https://github.com/crystal-lang/crystal/releases)毎に用意されています。これは[tar.gz からのインストール](/install/from_targz)を参照してください。
 
 ## アップグレード
 

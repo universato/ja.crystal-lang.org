@@ -1,6 +1,6 @@
 # 配列 (Array)
 
-[Array](https://crystal-lang.org/api/Array.html)は順番に意味があり整数でインデックスされた、`T`型の値を要素として持つジェネリックなコレクションです。
+An [Array](https://crystal-lang.org/api/Array.html) is an ordered and integer-indexed generic collection of elements of a specific type `T`.
 
 配列は通常、角括弧 (`[]`) とコンマ (`,`) によって区切られた個々の要素による配列リテラルで生成されます。
 

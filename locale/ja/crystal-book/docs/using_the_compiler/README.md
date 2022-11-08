@@ -244,7 +244,7 @@ crystal docs src/my_app.cr
 * `--project-name=NAME`: プロジェクト名を設定する。可能な場合`shard.yml`にある名前をデフォルト値として利用します。デフォルト値が見つからない場合、このオプションは必須です
 * `--project-version=VERSION`: プロジェクトのバージョンを指定します。可能な場合`shard.yml`に指定されたものかgitのコミットからバージョンを取り出します。デフォルト値が見つからない場合、このオプションは必須です
 * `--output=DIR, -o DIR`: 出力先のディレクトリを指定する (デフォルト: `./docs`)
-* `--canonical-base-url=URL, -b URL`: [canonicalなベースURL](https://en.wikipedia.org/wiki/Canonical_link_element)を指定します。
+* `--canonical-base-url=URL, -b URL`: [canonical なベース URL](https://en.wikipedia.org/wiki/Canonical_link_element) を設定します。
 
 次の例ではcanonicalなベースURLを明示的に指定した上で、`public`を出力先のディレクトリにして, そして`src/my_app.cr`をエントリーポイントとしてドキュメントを生成しています。
 

@@ -1,5 +1,5 @@
 ---
-subtitle: On Gentoo Linux
+subtitle: Gentoo Linux への
 ---
 
 Gentoo Linux は main オーバレイに Crystal のコンパイラを含んでいます。

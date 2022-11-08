@@ -1,7 +1,9 @@
 # 浮動小数点数 (Float)
 
-浮動小数点数には[Float32](https://crystal-lang.org/api/Float32.html)と[Float64](https://crystal-lang.org/api/Float64.html)という2つ型があり、
-それぞれIEEEで定義されている[binary32](http://en.wikipedia.org/wiki/Single_precision_floating-point_format)と[binary64](http://en.wikipedia.org/wiki/Double_precision_floating-point_format)に対応しています。
+There are two floating point types, [Float32](https://crystal-lang.org/api/Float32.html) and [Float64](https://crystal-lang.org/api/Float64.html),
+which correspond to the [binary32](http://en.wikipedia.org/wiki/Single_precision_floating-point_format)
+and [binary64](http://en.wikipedia.org/wiki/Double_precision_floating-point_format)
+types defined by IEEE.
 
 浮動小数点リテラルは `+` (オプション) または `-` 符号に続く数値とアンダースコアからなり、さらに指数部分と型を表わすサフィックスを続けることができます。サフィックスがない場合はリテラルの型は`Float64`となります。
 

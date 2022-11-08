@@ -1,6 +1,6 @@
 # アノテーション
 
-アノテーションを使うとソースコードに特定の機能に関するメタデータを追加することができます。型、メソッド、そしてインスタンス変数にアノテーションを与えることができます。標準ライブラリの[JSON::Field](https://crystal-lang.org/api/JSON/Field.html)のようなユーザー定義のアノテーションは、`annotation` キーワードで定義されます。いくつかの[組み込みアノテーション](built_in_annotations.md)はコンパイラによって提供されます。
+アノテーションを使うとソースコードに特定の機能に関するメタデータを追加することができます。型、メソッド、そしてインスタンス変数にアノテーションを与えることができます。標準ライブラリの [JSON::Field](https://crystal-lang.org/api/JSON/Field.html) のようなユーザー定義のアノテーションは、`annotation` キーワードで定義されます。いくつかの[組み込みアノテーション](built_in_annotations.md)はコンパイラによって提供されます。
 
 ユーザーは `class` や `struct` を定義するのと同じように、独自のアノテーションを `annotation` キーワードを使って定義できます。
 
@@ -64,7 +64,7 @@ end
 
 ### キー/値
 
-アノテーションに格納したキー/値のペアの値はコンパイル時に [`[]`](https://crystal-lang.org/api/Crystal/Macros/Annotation.html#%5B%5D%28name%3ASymbolLiteral%7CStringLiteral%7CMacroId%29%3AASTNode-instance-method) メソッド経由でアクセスできます。
+アノテーションの格納したキー/値のペアの値はコンパイル時に [`[]`](https://crystal-lang.org/api/Crystal/Macros/Annotation.html#%5B%5D%28name%3ASymbolLiteral%7CStringLiteral%7CMacroId%29%3AASTNode-instance-method) メソッド経由でアクセスできます。
 
 ```crystal
 annotation MyAnnotation
@@ -93,7 +93,7 @@ end
 annotation_named_args # => {value: 2, name: "Jim"}
 ```
 
-このメソッドは `NamedTupleLiteral` を返すので、この型にあるすべての[メソッド](https://crystal-lang.org/api/Crystal/Macros/NamedTupleLiteral.html)が使えます。特に `#double_splat` を使うと、アノテーションの引数をメソッドに渡すのは容易になるでしょう。
+このメソッドは `NamedTupleLiteral` を返すので、この型の持つすべての[メソッド](https://crystal-lang.org/api/Crystal/Macros/NamedTupleLiteral.html)が使えます。特に `#double_splat` を使うと、アノテーションの引数をメソッドに渡すのは容易になるでしょう。
 
 ```crystal
 annotation MyAnnotation
@@ -115,7 +115,7 @@ new_test # => #<SomeClass:0x5621a19ddf00 @name="Jim", @value=2>
 
 ### 位置指定
 
-位置指定の値もコンパイル時 [`[]`](<https://crystal-lang.org/api/Crystal/Macros/Annotation.html#%5B%5D%28index%3ANumberLiteral%29%3AASTNode-instance-method>) メソッドによってアクセスできます。しかし、1度に1つのインデックスにアクセスすることしかできません。
+位置指定の値もコンパイル時に [`[]`](<https://crystal-lang.org/api/Crystal/Macros/Annotation.html#%5B%5D%28index%3ANumberLiteral%29%3AASTNode-instance-method>) メソッドによってアクセスできます。しかし、1度に1つのインデックスにアクセスすることしかできません。
 
 ```crystal
 annotation MyAnnotation
@@ -153,7 +153,7 @@ end
 annotation_args # => {1, 2, 3, 4}
 ```
 
-戻り値の型の `TupleLiteral` はイテレート可能なので、以前の例をより良い方法で書き直すことができます。また、キー/値のときの延長で、`TupleLiteral` の[メソッド](https://crystal-lang.org/api/Crystal/Macros/TupleLiteral.html)を使えます。
+戻り値の型の `TupleLiteral` はイテレート可能なので、以前の例をより良い方法で書き直すことができます。また、キー/値のときの延長で、このメソッドは `TupleLiteral` の[メソッド](https://crystal-lang.org/api/Crystal/Macros/TupleLiteral.html)が使えます。
 
 ```crystal
 annotation MyAnnotation
@@ -177,7 +177,7 @@ annotation_read
 
 ## 読み出し方法
 
-アノテーションは [`TypeNode`](https://crystal-lang.org/api/Crystal/Macros/TypeNode.html)、[`Def`](https://crystal-lang.org/api/Crystal/Macros/Def.html) そして [`MetaVar`](https://crystal-lang.org/api/Crystal/Macros/MetaVar.html) から `.annotation(type : TypeNode)` メソッドを使うことで読み出せます。このメソッドは与えられた型の適用されたアノテーションを表す [`Annotation`](https://crystal-lang.org/api/Crystal/Macros/Annotation.html) オブジェクトを返します。
+アノテーションは [`TypeNode`](https://crystal-lang.org/api/Crystal/Macros/TypeNode.html)、[`Def`](https://crystal-lang.org/api/Crystal/Macros/Def.html)、そして [`MetaVar`](https://crystal-lang.org/api/Crystal/Macros/MetaVar.html) から `.annotation(type : TypeNode)` メソッドを使うことで読み出せます。This method return an [`Annotation`](https://crystal-lang.org/api/Crystal/Macros/Annotation.html) object representing the applied annotation of the supplied type.
 
 !!! note
     もし複数の同じ型のアノテーションが適用されていた場合、 `.annotation` メソッドは_最後_のものを返します。

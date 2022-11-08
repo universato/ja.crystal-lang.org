@@ -1,6 +1,6 @@
 # シンボル (Symbol)
 
-[Symbol](https://crystal-lang.org/api/Symbol.html)はソースコード全体でユニークな名前を表します。
+A [Symbol](https://crystal-lang.org/api/Symbol.html) represents a unique name inside the entire source code.
 
 シンボルはコンパイル時に解釈されるもので、動的に生成することはできません。シンボルを生成する唯一の方法はシンボルリテラルを使うことです。それは、コロン (`:`) のあとに識別子を続けて記述します。識別子の部分はダブルクォート (`"`) で囲むこともできます。
 
